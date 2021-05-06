@@ -1,0 +1,11 @@
+{
+  "name": "passwork/test",
+  "description": "description",
+  "require": {
+    "ext-psr": "*",
+    "phalcon/devtools": "~4.1",
+    "phalcon/incubator-mongodb": "^1.0"
+  },
+  "require-dev": {
+  }
+}
