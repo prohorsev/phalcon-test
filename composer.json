@@ -4,7 +4,8 @@
   "require": {
     "ext-psr": "*",
     "phalcon/devtools": "~4.1",
-    "phalcon/incubator-mongodb": "^1.0"
+    "phalcon/incubator-mongodb": "^1.0",
+    "mongodb/mongodb": "^1.8"
   },
   "require-dev": {
   }

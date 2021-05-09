@@ -10,6 +10,8 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Session\Adapter\Stream as SessionAdapter;
 use Phalcon\Session\Manager as SessionManager;
 use Phalcon\Url as UrlResolver;
+use Phalcon\Incubator\MongoDB\Mvc\Collection\Manager as MongoDBCollectionManager;
+use MongoDB\Client;
 
 /**
  * Shared configuration service
@@ -82,6 +84,17 @@ $di->setShared('db', function () {
     return new $class($params);
 });
 
+/** Mongodb */
+$di->setShared('mongo', function () {
+    $config = $this->getConfig();
+    $mongo = new Client();
+
+    return $mongo->selectDatabase($config->mongodb->db);
+});
+
+$di->setShared('collectionsManager', function () {
+    return new MongoDBCollectionManager();
+});
 
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise

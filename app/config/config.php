@@ -16,6 +16,9 @@ return new \Phalcon\Config([
         'dbname'      => 'test',
         'charset'     => 'utf8',
     ],
+    'mongodb' => [
+        'db'     => 'test',
+    ],
     'application' => [
         'appDir'         => APP_PATH . '/',
         'controllersDir' => APP_PATH . '/controllers/',
@@ -23,6 +26,7 @@ return new \Phalcon\Config([
         'migrationsDir'  => APP_PATH . '/migrations/',
         'viewsDir'       => APP_PATH . '/views/',
         'pluginsDir'     => APP_PATH . '/plugins/',
+        'collectionsDir' => APP_PATH . '/collections/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
         'baseUri'        => '/',
